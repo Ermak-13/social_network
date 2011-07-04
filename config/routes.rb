@@ -1,4 +1,13 @@
 SocialNetwork::Application.routes.draw do
+  devise_for :users
+  
+  root :to => "homes#show"
+  
+  resource :home
+  
+  namespace :admin do
+    resources :bans, :only => [:index, :create, :destroy]
+  end
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

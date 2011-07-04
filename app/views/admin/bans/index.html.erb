@@ -1,0 +1,14 @@
+<div id="users">
+  <% @users.each do |user| %>
+    <p class="user" id="user_<%= user.id %>">
+      <%= user.email %>
+      <span>
+      <% if user.banned? %>
+        <%= link_to "Unban!", admin_ban_path(user), :method => :delete %>
+      <% else %>
+        <%= link_to "Ban!", admin_bans_path(:id => user.to_param), :method => :post %>
+      <% end %>
+      </span>
+    </p>
+  <% end %>
+</div>
