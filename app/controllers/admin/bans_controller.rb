@@ -15,6 +15,10 @@ class Admin::BansController < Admin::BaseAdminController
     redirect_to :action => :index
   end
   
+  def new
+    @user=User.new
+  end
+  
   private
   
   def initialize_user

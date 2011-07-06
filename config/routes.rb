@@ -6,7 +6,7 @@ SocialNetwork::Application.routes.draw do
   resource :home
   
   namespace :admin do
-    resources :bans, :only => [:index, :create, :destroy]
+    resources :bans, :only => [:index, :create, :destroy, :new]
   end
   # The priority is based upon order of creation:
   # first created -> highest priority.
