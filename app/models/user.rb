@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  before_save :initialize_product
   has_one :profile
   # Include default devise modules. Others available are:
   # :token_authenticatable, :encryptable, :confirmable, :lockable, :timeoutable and :omniauthable
@@ -6,9 +7,8 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :banned, :first_name, :last_name,
-                  :age, :sex, :country, :city, :phone, :university, :school
-  
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :banned
+
   def ban!
     self.update_attributes(:banned => true)
   end
@@ -16,4 +16,9 @@ class User < ActiveRecord::Base
   def unban!
     self.update_attributes(:banned => false)
   end
+  
+  private
+    def initialize_product
+      self.profile ||= Profile.create
+    end
 end

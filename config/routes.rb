@@ -4,7 +4,7 @@ SocialNetwork::Application.routes.draw do
   root :to => "homes#show"
   
   resource :home
-  resource :profiles
+  resources :profiles
   
   namespace :admin do
     resources :bans, :only => [:index, :create, :destroy, :new]
