@@ -1,10 +1,14 @@
 SocialNetwork::Application.routes.draw do
   devise_for :users
   
-  root :to => "users#show"
-
-  resources :users do
-    resources :friends, :only => [:index, :create, :destroy]
+  root :to => "user/homes#show"
+  
+  #resource :home
+  #resources :profiles
+  
+  namespace :user do
+    resource :home
+    resource :profile
   end
   
   namespace :admin do

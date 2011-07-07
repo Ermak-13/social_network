@@ -1,0 +1,7 @@
+<% content_for :content do %>
+  <%= render 'users/header' %>
+  <section class="content">
+    <%= yield %>
+  </section>
+<% end %>
+<%= render :file => 'layouts/application'%>

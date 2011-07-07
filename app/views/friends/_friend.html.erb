@@ -1,0 +1,13 @@
+<div class="friend", data-id="<%= friend.id %>">
+  <div class="avatar"></div>
+  <div class="user_info">
+    <h3><%= friend.full_name %></h3>
+    <div class="actions">
+    <% if current_user.friends.include? friend %>
+      <%= link_to "Quarrell", user_friend_path(current_user, friend), :class => "action quarrell"%>
+    <% else %>
+      <%= link_to "Make friends", user_friends_path(current_user), :class => "action make_friends" %>
+    <% end %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,24 @@
+<%= stylesheet_link_tag 'admin', :media => 'screen' %>
+<section class="content">
+<h3>List of users and ban users</h3>
+<table>
+  <tr>
+    <th>e-mail</th>
+    <th>confirmed at</th>
+    <th>last sign in at</th>
+    <th>action</th
+  </tr>
+<% @users.each do |user| %>
+<tr>
+  <td><%= user.email %></td>
+  <td><%= user.confirmed_at %></td>
+  <td><%= user.last_sign_in_at%></td>
+  <% if user.banned? %>
+    <td><%= link_to "Unban!", admin_ban_path(user), :method => :delete %></td>
+  <% else %>
+    <td><%= link_to "Ban!", admin_bans_path(:id => user.id), :method => :post %></td>
+  <% end %>
+</tr>
+<% end %>
+</table>
+</section>
