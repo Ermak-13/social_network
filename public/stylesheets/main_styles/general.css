@@ -13,11 +13,8 @@ body{
   padding:0px;
 }
 
-body{
-}
-
 header{
-  width:850px;
+  width:650px;
   
   height:30px;
   border-style:solid;
@@ -43,7 +40,7 @@ a:hover{
 }
 
 .content{
-  width:835px;
+  width:635px;
   
   border-style:solid;
   border-width:3px;
@@ -54,7 +51,7 @@ a:hover{
 }
 
 footer{
-  width: 850px;
+  width: 650px;
   
   height:20px;
   font-size:15px;

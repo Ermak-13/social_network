@@ -1,0 +1,26 @@
+<%= stylesheet_link_tag 'main_styles/home' %>
+<%= render 'user/header' %>
+<section class="content">
+  <div id="avatar"></div>
+  <div id="info">
+    <ul>
+      <li>First Name: <%= @profile.first_name %></li>
+      <li>Last Name: <%= @profile.last_name %></li>
+      <li>Sex: <%= @profile.sex %></li>
+      <li>Date Of Birthday: <%= @profile.date_of_birthday %></li>
+      <li>Phone: <%= @profile.phone%></li>
+      <li>Country: <%= @profile.country%></li>
+      <li>City: <%= @profile.city %></li>
+    </ul>
+  </div>
+  
+  <div id="microposts">
+    <% @microposts.each do |micropost| %>
+    <div class="micropost">
+      <div class="sender"><%= micropost.user %></div>
+      <div class="messager"><%= micropost.content %></div>
+    </div>
+    <% end %>
+  </div>
+</section>
+<%= render 'layouts/footer'%>

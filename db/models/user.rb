@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
-  has_one :profile
-  has_many :microposts
   before_save :initialize_product
+  has_one :profile
+  has_many :microposts, :dependent => :destroy
   # Include default devise modules. Others available are:
   # :token_authenticatable, :encryptable, :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable, :confirmable,

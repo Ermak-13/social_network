@@ -2,11 +2,15 @@ SocialNetwork::Application.routes.draw do
   devise_for :users
   
   root :to => "user/homes#show"
-
+  
+  #resource :home
+  #resources :profiles
+  
   namespace :user do
-    resources :home
-    resources :profiles
+    resource :home
+    resource :profile
   end
+  
   namespace :admin do
     resources :bans, :only => [:index, :create, :destroy, :new]
   end

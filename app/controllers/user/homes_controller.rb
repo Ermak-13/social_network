@@ -1,5 +1,6 @@
-class HomesController < ApplicationController
-  before_filter :authenticate_user!
+class User::HomesController < User::BaseUserController
+  def index
+  end
   
   def show
   end

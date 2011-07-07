@@ -1,11 +1,9 @@
-class ProfilesController < ApplicationController
-  before_filter :authenticate_user! #выкасить на *уй (через наследование)
+class User::ProfilesController < User::BaseUserController
   def index
     @profiles=Profile.all
   end
   
   def show
-    @profile=current_user.profile
   end
   
   def new
@@ -13,7 +11,6 @@ class ProfilesController < ApplicationController
   end
 
   def edit
-    @profile=current_user.profile
   end
 
   def create
