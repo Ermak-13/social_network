@@ -1,9 +1,9 @@
 source 'http://rubygems.org'
-
+#kaminari -- pagination
 gem 'rails', '3.0.9'
 gem 'devise', '1.4.2'
-gem "paperclip", :git => "http://github.com/thoughtbot/paperclip.git"
-
+gem "paperclip", :git => "http://github.com/thoughtbot/paperclip.git" #carrierwave
+gem 'jquery-rails'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 

@@ -1,0 +1,40 @@
+<%= form_for user, :remote => true do |f| %>
+  <% f.fields_for :profile do |p| %>
+    <p>
+      <%= p.label :first_name %>
+      <%= p.text_field :first_name %>
+    </p>
+    <p>
+      <%= p.label :last_name %>
+      <%= p.text_field :last_name %>
+    </p>
+    <p>
+      <%= p.label :sex %>
+      <%= radio_button("user[profile_attributes]", :sex, "male",
+        :checked => user.profile.sex == "male" ) %>
+      male
+      <%= radio_button("user[profile_attributes]", :sex, "female", 
+        :checked => user.profile.sex == "female" ) %>
+      female
+    </p>
+    <p>
+      <%= p.label :date_of_birthday %>
+      <%= p.text_field :date_of_birthday %>
+    </p>
+    <p>
+      <%= p.label :phone %>
+      <%= p.text_field :phone %>
+    </p>
+    <p>
+      <%= p.label :country %>
+      <%= p.text_field :country %>
+    </p>
+    <p>
+      <%= p.label :city %>
+      <%= p.text_field :city %>
+    </p>
+    <p>
+      <%= p.submit "save profile"%>
+    </p>
+  <% end %>
+<% end %>
