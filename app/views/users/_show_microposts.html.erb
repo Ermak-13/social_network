@@ -1,0 +1,9 @@
+<div id="microposts">
+  <%= render "new_micropost" %>
+  <% user.microposts.each do |micropost| %>
+  <div class="micropost">
+    <div class="sender"><%= micropost.sender.full_name %></div>
+    <div class="messager"><%= micropost.content %></div>
+  </div>
+  <% end %>
+</div>

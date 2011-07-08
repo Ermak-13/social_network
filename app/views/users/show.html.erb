@@ -7,11 +7,4 @@
 <% else %>
   <%= render "profile", :profile => user.profile %>
 <% end %>
-<div id="microposts">
-  <% user.microposts.each do |micropost| %>
-  <div class="micropost">
-    <div class="sender"><%= micropost.user %></div>
-    <div class="messager"><%= micropost.content %></div>
-  </div>
-  <% end %>
-</div>
+<%= render "show_microposts" %>

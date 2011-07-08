@@ -1,48 +1,48 @@
+<div id="info">
 <%= form_for user, :remote => true do |f| %>
   <% f.fields_for :profile do |p| %>
-    <div id="info">
-      <ul>
-        <li>
-          <%= p.label :status %>
-          <%= p.text_field :status %>
-        </li>
-        <li>
-          <%= p.label :first_name %>
-          <%= p.text_field :first_name %>
-        </li>     
-        
-        <li>
-          <%= p.label :last_name %>
-          <%= p.text_field :last_name %>
-        </li>
-        
-        <li>
-          <%= p.label :sex %>
-          <%= radio_button("user[profile_attributes]", :sex, "male",
-          :checked => user.profile.sex == "male" ) %>
-          male
-          <%= radio_button("user[profile_attributes]", :sex, "female", 
-          :checked => user.profile.sex == "female" ) %>
-          female
-        </li>  
-        <li>
-          <%= p.label :date_of_birthday %>
-          <%= p.text_field :date_of_birthday %>
-        </li>
-        <li>
-          <%= p.label :phone %>
-          <%= p.text_field :phone %>
-        </li>
-        <li>
-          <%= p.label :country %>
-          <%= p.text_field :country %>
-        </li>
-        <li>
-          <%= p.label :city %>
-          <%= p.text_field :city %>
-        </li> 
-        <%= p.submit "save profile"%>    
-      </ul>
-    </div>
+    <ul>
+      <li>
+        <%= p.label :status %>
+        <%= p.text_field :status %>
+      </li>
+      <li>
+        <%= p.label :first_name %>
+        <%= p.text_field :first_name %>
+      </li>     
+      
+      <li>
+        <%= p.label :last_name %>
+        <%= p.text_field :last_name %>
+      </li>
+      
+      <li>
+        <%= p.label :sex %>
+        <%= radio_button("user[profile_attributes]", :sex, "male",
+        :checked => user.profile.sex == "male" ) %>
+        male
+        <%= radio_button("user[profile_attributes]", :sex, "female", 
+        :checked => user.profile.sex == "female" ) %>
+        female
+      </li>  
+      <li>
+        <%= p.label :date_of_birthday %>
+        <%= p.text_field :date_of_birthday %>
+      </li>
+      <li>
+        <%= p.label :phone %>
+        <%= p.text_field :phone %>
+      </li>
+      <li>
+        <%= p.label :country %>
+        <%= p.text_field :country %>
+      </li>
+      <li>
+        <%= p.label :city %>
+        <%= p.text_field :city %>
+      </li> 
+      <%= p.submit "save profile"%>    
+    </ul>      
   <% end %>
 <% end %>
+</div>

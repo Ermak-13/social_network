@@ -1,0 +1,6 @@
+<%= form_for user, :remote => true do |f| %>
+  <%= form_for :micropost do |p| %>
+    <%= p.text_field :content %>
+    <%= p.submit "send micropost"%>
+  <% end%>
+<% end %>
