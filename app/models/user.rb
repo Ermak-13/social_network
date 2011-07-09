@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   has_one :profile
+  has_many :photos
   has_many :microposts
   has_many :friendships
   has_many :friends, :through => :friendships, :foreign_key => "friend_id"

@@ -1,0 +1,10 @@
+<% @photos.each do |photo| %>
+  <%= link_to image_tag(photo.image.url(:thumb)), photo.image.url(:medium) %>
+  <%= link_to "remove", user_photo_path(user, photo), :method => :delete %>
+<% end %>
+
+<%= form_for :photo, user_photos_path(user), 
+  :html => { :multipart => true } do |f| %>
+  <%= f.file_field :image %>
+  <%= f.submit "send photo" %>
+<% end %>

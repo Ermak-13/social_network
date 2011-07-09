@@ -2,13 +2,14 @@ source 'http://rubygems.org'
 #kaminari -- pagination
 gem 'rails', '3.0.9'
 gem 'devise', '1.4.2'
-gem "paperclip", :git => "http://github.com/thoughtbot/paperclip.git" #carrierwave
+gem "paperclip", "~> 2.3"
 gem 'jquery-rails'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'mysql2', '~> 0.2.6'
 
+## GRAPHS: Highcharts
 # Use unicorn as the web server
 # gem 'unicorn'
 

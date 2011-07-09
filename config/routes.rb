@@ -5,11 +5,14 @@ SocialNetwork::Application.routes.draw do
 
   resources :users do
     resources :friends, :only => [:index, :create, :destroy]
+    resources :photos, :only => [:index, :create, :destroy]   
+    resources :microposts, :only => [:index, :create, :destroy]
   end
   
   namespace :admin do
     resources :bans, :only => [:index, :create, :destroy, :new]
   end
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

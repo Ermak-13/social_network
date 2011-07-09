@@ -4,5 +4,8 @@ class Micropost < ActiveRecord::Base
   
   validates_presence_of :user_id, :sender_id
   
-  attr_accessible :content
+  delegate :full_name, :to => :sender, :prefix => true
+  
+  scope :ordered, order("microposts.id DESC")
+  default_scope ordered
 end

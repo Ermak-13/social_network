@@ -1,7 +1,9 @@
-<%= stylesheet_link_tag 'main_styles/authorization', :media => 'screen' %>
+<% content_for :stylesheets do %>
+  <%= stylesheet_link_tag 'main_styles/devise' %>
+<% end %>
 <section class="content">  
   <h2>Sign in</h2>
-  <%= image_tag("world.jpg", :alt => "Sample App", :id => "world") %>
+  <%= image_tag("world.jpg", :alt => "Sample App", :id => "image_devise") %>
 
 <%= form_for(resource, :as => resource_name,:url => session_path(resource_name)) do |f| %>
     <%= f.label :email %><br />

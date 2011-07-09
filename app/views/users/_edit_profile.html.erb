@@ -1,6 +1,6 @@
 <div id="info">
 <%= form_for user, :remote => true do |f| %>
-  <% f.fields_for :profile do |p| %>
+  <% f.fields_for :profile, :html => {:multipart => true } do |p| %>
     <ul>
       <li>
         <%= p.label :status %>
