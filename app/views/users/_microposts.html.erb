@@ -3,4 +3,7 @@
     <%= render "microposts/micropost_fields" %>
   </div>
   <div id="microposts" data-url="<%= user_microposts_path(user) %>"></div>
+  <div id="microposts_navigation">
+    <%= link_to "Show more...", user_microposts_path(user), :id => "show_more_microposts", "data-page" => 1 %>
+  </div>
 </div>

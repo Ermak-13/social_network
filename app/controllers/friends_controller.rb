@@ -23,7 +23,7 @@ class FriendsController < UserAwareController
       User.search params[:search], :include => :profile#, :conditions => { :id_not => current_user.id }
       #User.where("id <> ?", current_user.id).all#current_user.friends.with_profile      
     else
-      @friends ||= current_user.friends.with_profile
+      @friends ||= current_user.friends.with_profile.page(params[:page]).per(10)
     end
   end
   helper_method :friends
