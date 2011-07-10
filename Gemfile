@@ -4,10 +4,12 @@ gem 'rails', '3.0.9'
 gem 'devise', '1.4.2'
 gem "paperclip", "~> 2.3"
 gem 'jquery-rails'
+gem 'kaminari', :git => "git://github.com/amatsuda/kaminari.git"
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'mysql2', '~> 0.2.6'
+gem 'thinking-sphinx', :git => "git://github.com/freelancing-god/thinking-sphinx.git", :branch => "rails3"
 
 # Use unicorn as the web server
 # gem 'unicorn'

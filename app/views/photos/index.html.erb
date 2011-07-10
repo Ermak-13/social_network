@@ -4,6 +4,7 @@
 
 <%= render "users/header" %>
 <section class="content">
-  <%= render :partial => "photo", :collection => @photos %>    
+  <%= render @photos %>
+  <%= paginate @photos %>
   <%= render "new_photo" %>
 </section>

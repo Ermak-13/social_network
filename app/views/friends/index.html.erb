@@ -1,4 +1,8 @@
 <%= render "users/header"%>
 <section class="content">
+  <%= form_tag user_friends_path(user.id), :method => :get do %>
+    <input type="search" name="search" placeholder="Search..."></input>
+    <input type="submit" value="Search"></input>
+  <% end %>
   <%= render :partial => "friend", :collection => friends %>
 </section>

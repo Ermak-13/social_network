@@ -6,6 +6,15 @@ class User < ActiveRecord::Base
   has_many :friends, :through => :friendships, :foreign_key => "friend_id"
   
   before_create :create_profile
+  
+  after_create do |user|
+    Statistics.user_added(user)
+  end
+  
+  after_destroy do |user|
+    Statistics.user_removed(user)
+  end
+  
   # Include default devise modules. Others available are:
   # :token_authenticatable, :encryptable, :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable, :confirmable,
@@ -20,6 +29,18 @@ class User < ActiveRecord::Base
   scope :with_profile, includes(:profile)
   
   delegate :full_name, :to => :profile
+  
+  define_index do
+    indexes [profile.first_name, profile.last_name], :as => :user_name
+    indexes profile.age
+    indexes profile.country
+    indexes profile.city
+    indexes profile.phone
+    indexes profile.date_of_birthday
+    indexes profile.sex
+    
+    has id
+  end
   
   def ban!
     self.update_attributes(:banned => true)

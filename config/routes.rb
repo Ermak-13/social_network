@@ -11,6 +11,7 @@ SocialNetwork::Application.routes.draw do
   
   namespace :admin do
     resources :bans, :only => [:index, :create, :destroy, :new]
+    resource :statistics, :only => [:show]
   end
   
   # The priority is based upon order of creation:

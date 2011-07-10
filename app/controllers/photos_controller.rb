@@ -1,7 +1,7 @@
 class PhotosController < UserAwareController
   
   def index
-    @photos = Photo.find_all_by_user_id(user.id)
+    @photos = Photo.where("user_id = ?",user.id).order(:created_at).page(params[:page]).per(9)
   end
   
   def create
