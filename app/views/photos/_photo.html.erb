@@ -1,0 +1,11 @@
+<div class="container_photo">
+  <div class="user_photo">
+    <%= image_tag photo.image.url(:small), :alt => "photo" %>
+  </div>
+  
+  <% if user == current_user %>
+    <div class="remove_photo">
+      <%= link_to "remove", user_photo_path(user,photo), :method => :delete %>
+    </div>
+  <% end %>
+</div>

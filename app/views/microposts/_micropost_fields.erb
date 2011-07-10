@@ -1,5 +1,5 @@
 <%= form_for :micropost, :url => user_microposts_path(user), :remote => true do |f| %>
-  <%= f.text_field :content %>
+  <%= f.text_field :content, :id => "new_micropost_text" %>
   <%= f.hidden_field :sender_id, :value => current_user.id %>
   <%= f.hidden_field :user_id, :value => user.id %>
   <%= f.submit "send micropost"%>

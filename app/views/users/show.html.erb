@@ -3,16 +3,10 @@
 <% end %>
 <% content_for :javascripts do %>
   <%= javascript_include_tag "microposts.js" %>
+  <%= javascript_include_tag "avatar.js" %>
 <% end %>
 
-  <%= image_tag user.profile.avatar.url(:thumb), :id => "avatar" %>
-  
-<%= form_for current_user, :html => { :multipart => true } do |f| %>
-  <%= f.fields_for :profile do |p| %>
-    <%= p.file_field :avatar %>
-  <% end %>
-    <%= f.submit %>
-<% end %>
+<%= render "avatar" %>
 
 <% if user.id == current_user.id %>
   <%= render "edit_profile" %>

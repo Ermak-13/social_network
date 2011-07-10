@@ -1,10 +1,9 @@
-<% @photos.each do |photo| %>
-  <%= link_to image_tag(photo.image.url(:thumb)), photo.image.url(:medium) %>
-  <%= link_to "remove", user_photo_path(user, photo), :method => :delete %>
+<% content_for :stylesheets do %>
+  <%= stylesheet_link_tag 'main_styles/home' %>
 <% end %>
 
-<%= form_for :photo, user_photos_path(user), 
-  :html => { :multipart => true } do |f| %>
-  <%= f.file_field :image %>
-  <%= f.submit "send photo" %>
-<% end %>
+<%= render "users/header" %>
+<section class="content">
+  <%= render :partial => "photo", :collection => @photos %>    
+  <%= render "new_photo" %>
+</section>

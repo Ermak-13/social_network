@@ -1,16 +1,50 @@
-#avatar{
+#container_avatar{
   float:left;
+}
+
+#avatar{
   border-style:solid;
-  border-width:1px;
+  border-width:2px;
   border-radius:10px;
   padding:10px;
 }
 
+#show_load_avatar{
+  background-color:#98CBD2;
+  width:200px;
+  border-style:solid;
+  border-width:2px;
+  font-size:13px;
+  font-weight:bold;
+  text-align:center;
+}
+
+#load_avatar{
+  background-color:#FFFFFF;
+  position:absolute;
+  border-style:solid;
+  border-width:2px;
+  border-radius:10px;
+  padding:5px;
+  margin-top:5px;
+  display:none;
+}
+
 #info{
-  min-height:150px;
+  min-height:200px;
   border-style:solid;
   border-width:1px;
-  margin-left: 170px;
+  margin-left: 230px;
+  padding:10px;
+  
+  border-style:solid;
+  border-width:2px;
+  border-radius:10px;
+}
+
+#wall{
+  margin:10px auto 0px auto;
+  padding:10px;
 }
 
 #microposts{
@@ -19,14 +53,36 @@
 
 .micropost{
   border-style:dotted;
-  border-width:1px;
+  border-width:2px;
   border-radius:10px;
   margin-bottom:10px;
   padding:5px;
 }
 
-.sender{
+#new_micropost_text{
+  width:500px;
+  border-radius:5px;
 }
 
-.messager{
+.round_field{
+  border-radius:5px;
+}
+
+.container_photo{
+  width:150px;
+  display:inline-block;
+  border-style:solid;
+  border-width:2px;
+  border-radius:10px;
+  padding:5px;
+  margin-left:40px;
+  margin-bottom:20px;
+}
+
+.user_photo{
+  text-align:center;
+}
+
+.remove_photo{
+  text-align:center;
 }

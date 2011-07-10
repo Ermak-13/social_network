@@ -9,7 +9,6 @@ gem 'jquery-rails'
 
 gem 'mysql2', '~> 0.2.6'
 
-## GRAPHS: Highcharts
 # Use unicorn as the web server
 # gem 'unicorn'
 

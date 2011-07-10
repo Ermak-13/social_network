@@ -1,5 +1,11 @@
+<% content_for :stylesheets do %>
+  <%= stylesheet_link_tag 'main_styles/friend' %>
+<% end %>
+
 <div class="friend", data-id="<%= friend.id %>">
-  <div class="avatar"></div>
+  <div class="avatar">
+    <%= image_tag friend.profile.avatar.url(:small), :alt =>"avatar" %>
+  </div>
   <div class="user_info">
     <h3><%= friend.full_name %></h3>
     <div class="actions">
@@ -9,5 +15,12 @@
       <%= link_to "Make friends", user_friends_path(current_user), :class => "action make_friends" %>
     <% end %>
     </div>
+  </div>
+  <div class="user_profile">
+    date of birthday: <%= friend.profile.date_of_birthday %><br />
+    sex: <%= friend.profile.sex %><br />
+    phone: <%= friend.profile.phone %><br />
+    country: <%= friend.profile.country %> |
+    city: <%= friend.profile.city %><br />
   </div>
 </div>

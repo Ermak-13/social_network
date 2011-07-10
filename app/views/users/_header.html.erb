@@ -2,11 +2,8 @@
   <nav>    
     <div><%= link_to "Home",root_path %></div>
     <div><%= link_to "Friends", user_friends_path(current_user) %></div>
-    <div><%= link_to "Photos", "#" %></div>
-    <% if false %>
-    <div><%= link_to "Information", edit_user_profile_path %></div>
+    <div><%= link_to "Photos", user_photos_path(current_user) %></div>
     <div><%= link_to "Settings", edit_user_registration_path %></div>
-    <% end %>
     <div><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></div>    
   </nav>
 </header>

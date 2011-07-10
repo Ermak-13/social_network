@@ -1,3 +1,4 @@
-<% content_for :content do %>
+<%= render "users/header"%>
+<section class="content">
   <%= render :partial => "friend", :collection => friends %>
-<% end %>
+</section>

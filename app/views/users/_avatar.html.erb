@@ -1,0 +1,19 @@
+<div id="container_avatar">
+  <% if user.profile.avatar.file? %>
+    <%= image_tag user.profile.avatar.url(:medium), :id => "avatar" %>
+  <% else %>
+    <%= image_tag "default.jpg", :id => "avatar" %>
+  <% end %>
+  
+  <% if user == current_user %>
+    <div id="show_load_avatar">load avatar</div>
+    <div id="load_avatar">
+      <%= form_for current_user, :html => { :multipart => true } do |f| %>
+      <%= f.fields_for :profile do |p| %>
+      <%= p.file_field :avatar %>
+      <% end %>
+      <%= f.submit %>
+      <% end %>
+    </div>
+  <% end %>
+</div>
