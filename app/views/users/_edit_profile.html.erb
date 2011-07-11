@@ -2,35 +2,35 @@
 <%= form_for user, :remote => true do |f| %>
   <% f.fields_for :profile, :html => {:multipart => true } do |p| %>    
       
-      <%= p.label :status %>
+      <%= p.label :status, :class => "edit_profile_label" %>
       <%= p.text_field :status, :class => "round_field" %><br />
       
-      <%= p.label :first_name %>
+      <%= p.label :first_name, :class => "edit_profile_label" %>
       <%= p.text_field :first_name, :class => "round_field" %><br />
       
-      <%= p.label :last_name %>
+      <%= p.label :last_name, :class => "edit_profile_label" %>
       <%= p.text_field :last_name, :class => "round_field" %><br />
       
     
     
-      <%= p.label :sex %>
+      <%= p.label :sex, :class => "edit_profile_label" %>
       
       <%= radio_button("user[profile_attributes]", :sex, "male",
         :checked => user.profile.sex == "male" ) %>male
       <%= radio_button("user[profile_attributes]", :sex, "female", 
         :checked => user.profile.sex == "female" ) %>female<br />
         
-      <%= p.label :date_of_birthday %>
+      <%= p.label :date_of_birthday, :class => "edit_profile_label" %>
       <%= p.text_field :date_of_birthday, :class => "round_field" %><br />
       
-      <%= p.label :phone %>
+      <%= p.label :phone, :class => "edit_profile_label" %>
       <%= p.text_field :phone, :class => "round_field" %><br />
       
-      <%= p.label :country %>
+      <%= p.label :country, :class => "edit_profile_label" %>
       <%= p.text_field :country, :class => "round_field" %><br />
       
   
-      <%= p.label :city %>
+      <%= p.label :city, :class => "edit_profile_label" %>
       <%= p.text_field :city, :class => "round_field" %><br />
         
     <%= p.submit "save profile" %>

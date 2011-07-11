@@ -58,6 +58,11 @@ footer{
   margin:20px auto;
 }
 
+.edit_profile_label{
+  width:100px;
+  display:inline-block;
+}
+
 #thema{
   background-color:#FFFFFF;
   width:10px;
