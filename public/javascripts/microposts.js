@@ -5,8 +5,7 @@ function loadMicroposts() {
   $.get(href, { micropost_id: lastMicropostId },function(data) {
   	if (data==" ") {
   		return;
-  	}
-    console.log("data", data);
+    }
     $microposts.prepend(data);
     var newLastMicropostId = $microposts.find(".micropost:first-child").attr("data-id");
     $microposts.attr("data-lastPostId", newLastMicropostId);

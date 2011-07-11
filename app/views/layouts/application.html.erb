@@ -11,10 +11,12 @@
   <%= stylesheet_link_tag 'main_styles/general' %>
   <%= yield :stylesheets %>
   <%= javascript_include_tag :defaults %>
+  <%= javascript_include_tag "jquery_cookie/jquery.cookie.js","thema.js" %>
   <%= yield :javascripts %>
   <%= csrf_meta_tag %>
 </head>
 <body>
+  <div id="thema"></div>
   <div class="container">
     <%= render "layouts/messages"%>
     <%= content_for?(:content) ? yield(:content) : yield %>
