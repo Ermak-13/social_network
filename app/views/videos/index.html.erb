@@ -1,0 +1,11 @@
+<% content_for :stylesheets do %>
+  <%= stylesheet_link_tag 'main_styles/home' %>
+<% end %>
+<% content_for :stylesheets do %>
+  <%= javascript_include_tag 'swfobject/swfobject.js' %>
+<% end %>
+
+<%= render "users/header" %>
+<section class="content">
+  <%= render "new_video" %>
+</section>

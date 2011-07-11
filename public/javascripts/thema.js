@@ -3,7 +3,6 @@ $(document).ready(function(){
   if(current_value == "white"){
     console.log("white");
     $('head').append('<link rel="stylesheet" href="/stylesheets/thema/white.css" >')
-    J
   }else{
     console.log("black")
     $('head').append('<link rel="stylesheet" href="/stylesheets/thema/black.css" >')

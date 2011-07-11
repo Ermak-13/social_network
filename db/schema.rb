@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110710125353) do
+ActiveRecord::Schema.define(:version => 20110711075102) do
 
   create_table "friendships", :force => true do |t|
     t.integer  "user_id"
@@ -88,5 +88,15 @@ ActiveRecord::Schema.define(:version => 20110710125353) do
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
+
+  create_table "videos", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "video_content_type"
+    t.string   "video_file_name"
+    t.integer  "video_file_size"
+    t.string   "state"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end

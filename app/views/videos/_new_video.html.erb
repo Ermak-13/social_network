@@ -1,0 +1,7 @@
+<% if user == current_user %>
+  <%= form_for :video, user_videos_path(user), 
+  :html => { :multipart => true } do |f| %>
+    <%= f.file_field :image %>
+    <%= f.submit "send video" %>
+    <% end %>
+<% end %>
