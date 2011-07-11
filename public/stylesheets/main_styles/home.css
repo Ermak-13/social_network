@@ -42,6 +42,10 @@
   border-radius:10px;
 }
 
+#info ul li{
+  font-size:15px;
+}
+
 #wall{
   margin:10px auto 0px auto;
   padding:10px;

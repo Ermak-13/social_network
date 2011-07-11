@@ -2,8 +2,7 @@
   <%= stylesheet_link_tag 'main_styles/home' %>
 <% end %>
 <% content_for :javascripts do %>
-  <%= javascript_include_tag "microposts.js" %>
-  <%= javascript_include_tag "avatar.js" %>
+  <%= javascript_include_tag "microposts.js","avatar.js" %>
 <% end %>
 
 <%= render "avatar" %>

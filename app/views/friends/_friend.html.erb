@@ -7,7 +7,7 @@
     <%= image_tag friend.profile.avatar.url(:small), :alt =>"avatar" %>
   </div>
   <div class="user_info">
-    <h3><%= friend.full_name %></h3>
+    <%= link_to friend.full_name, user_path(friend), :class => "link_user" %>
     <div class="actions">
     <% if current_user.friends.include? friend %>
       <%= link_to "Quarrell", user_friend_path(current_user, friend), :class => "action quarrell"%>

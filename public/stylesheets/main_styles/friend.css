@@ -17,6 +17,11 @@
   float:left;
   margin:10px 40px 10px 0px;
 }
+
 .user_profile{
   margin:10px 0px;
+}
+
+.link_user{
+  font-size:20px;
 }

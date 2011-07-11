@@ -13,11 +13,7 @@ class Admin::BansController < Admin::BaseAdminController
   def destroy
     @user.unban!
     redirect_to :action => :index
-  end
-  
-  def new
-    @user=User.new
-  end
+  end  
   
   private
   

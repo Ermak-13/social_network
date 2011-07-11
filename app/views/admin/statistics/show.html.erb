@@ -1,6 +1,9 @@
 <% content_for :javascripts do %>
   <%= javascript_include_tag "highcharts/highcharts", "my_charts.js"%>
 <% end %>
+<% content_for :stylesheets do %>
+  <%= stylesheet_link_tag 'main_styles/admin', :media => 'screen' %>
+<% end %>
 <section class="content">
   <div id="orders_chart"></div>
   <div id="date" data-date="<%= 3.weeks.ago.to_i*1000%>"></div>

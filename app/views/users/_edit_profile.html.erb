@@ -21,7 +21,7 @@
         :checked => user.profile.sex == "female" ) %>female<br />
         
       <%= p.label :date_of_birthday, :class => "edit_profile_label" %>
-      <%= p.text_field :date_of_birthday, :class => "round_field" %><br />
+      <%= date_select("user[profile_attributes]", :date_of_birthday, :start_year => 1910) %>
       
       <%= p.label :phone, :class => "edit_profile_label" %>
       <%= p.text_field :phone, :class => "round_field" %><br />
